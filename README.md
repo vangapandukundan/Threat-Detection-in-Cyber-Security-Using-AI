@@ -33,3 +33,4 @@ The "Threat Detection in Cyber Security Using AI" project aims to develop a thre
 
 You can access the CIC-IDS2017 dataset [here](https://www.unb.ca/cic/datasets/ids-2017.html).
 
+## Contributor: Vangapandu Kundan
