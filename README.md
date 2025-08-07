@@ -27,9 +27,36 @@ The "Threat Detection in Cyber Security Using AI" project aims to develop a thre
 - The final step applies seven machine learning algorithms to each attack file multiple times for robust evaluation.
 - Results of these operations are displayed on the screen and saved in the file "./attacks/results_1.csv".
 - Additionally, box and whisker graphics representing the results are generated.
-- Both the graphics and results are saved in the "./attacks/result_graph_1/" folder.
-- 
-## Dataset Source
 
+## Step 5: MODEL TRAINING AND EVALUATION
+
+- Models are trained multiple times to account for randomness and ensure stable performance across different runs.
+- Each machine learning algorithm is trained using the attack-specific datasets with selected high-weight features.
+- Time taken for training and inference is also recorded to assess computational efficiency.
+
+## Step 6: MODEL COMPARISON AND BEST MODEL SELECTION
+
+- Models are compared across multiple attack types to assess generalization and robustness.
+- Visualization through box and whisker plots provides a clear picture of how each model performs across various metrics.
+- Seven ML algorithms are compared: Random Forest, Decision Tree, SVM, KNN, Logistic Regression, Naive Bayes, and Gradient Boosting.
+
+## Step 7: ADVANCED EVALUATION FOR BEST MODEL
+
+- Confusion Matrix is plotted for each selected best model to analyze true positives, false positives, etc.
+- Model robustness is tested against noisy or adversarial examples to check resilience.
+- Scalability and deployment feasibility of the best model are discussed based on memory usage and inference time.
+
+## Step 8: HYPERPARAMETER TUNING FOR BEST MODEL
+
+- To optimize the performance of the best-performing machine learning model by fine-tuning its hyperparameters rather than using default values. 
+- Hyperparameters helps the model learn better patterns from attack data, leading to higher accuracy in detecting cyber threats.
+- Hyperparameter tuning makes the final model more reliable, robust, and ready for real-time intrusion detection systems in real-world environments.
+
+## Step 9: FINAL RESULTS AND RECOMMENDATIONS
+
+- After evaluating seven machine learning models on attack-specific data from the CIC-IDS2017 dataset, the Random Forest Classifier consistently delivered the best overall.
+- Techniques like SMOTE oversampling and feature scaling helped improve the model’s ability to handle class imbalance and generalize better.
+- For production, it's recommended to add real-time feature extraction, model monitoring, and explore ensemble methods for improved robustness.
+  
 You can access the CIC-IDS2017 dataset [here](https://www.unb.ca/cic/datasets/ids-2017.html).
 
