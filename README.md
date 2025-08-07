@@ -28,13 +28,12 @@ The "Threat Detection in Cyber Security Using AI" project aims to develop a thre
 - Results of these operations are displayed on the screen and saved in the file "./attacks/results_1.csv".
 - Additionally, box and whisker graphics representing the results are generated.
 
-### Step 5: Handle class imbalance 
-
+## Step 5: Model Training And Evaluation
 - It’s when one category in your dataset has way more samples than the others, making it harder for the model to learn fairly.
 - Each machine learning algorithm is trained using the attack-specific datasets with selected high-weight features.
 - Time taken for training and inference is also recorded to assess computational efficiency.
 
-## Step 6: Model Comparision and Best Model Comparision 
+## Step 6: Model Comparision And Model Selection
 
 - Models are compared across multiple attack types to assess generalization and robustness.
 - Visualization through box and whisker plots provides a clear picture of how each model performs across various metrics.
@@ -46,7 +45,7 @@ The "Threat Detection in Cyber Security Using AI" project aims to develop a thre
 - Model robustness is tested against noisy or adversarial examples to check resilience.
 - Scalability and deployment feasibility of the best model are discussed based on memory usage and inference time.
 
-## Step 8: Hyperparameter Tuning For Best Model
+## Step 8: Hyperparameter Turning For Best Model
 
 - We fine-tune the model’s settings—called hyperparameters—to help it learn better and make smarter predictions.
 - Hyperparameters helps the model learn better patterns from attack data, leading to higher accuracy in detecting cyber threats.
