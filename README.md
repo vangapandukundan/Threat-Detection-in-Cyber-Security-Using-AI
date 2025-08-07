@@ -1,35 +1,132 @@
-# Threat Detection in Cyber Security Using AI
+# 🔐 Network Threat Detection using Machine Learning (CIC-IDS 2017)
 
-## Overview
+This project focuses on building and evaluating multiple machine learning models for **intrusion detection** using the **CIC-IDS-2017** dataset. The system is capable of classifying network traffic into normal and various types of attacks.
 
-The "Threat Detection in Cyber Security Using AI" project aims to develop a threat detection system using machine learning algorithms. The project consists of several steps, each of which contributes to the overall goal of enhancing cyber security. Here's an overview of each step:
+---
 
-### Step 1: Data Preprocessing (PreProcessing.ipynb)
+## 📊 Dataset: CIC-IDS-2017
 
-- This step involves data preprocessing to prepare the dataset for machine learning.
-- The dataset used is the CIC-IDS2017 dataset, which should be stored in the "CSVs" folder located in the same directory as the program.
-- You can access the dataset files [here](https://www.unb.ca/cic/datasets/ids-2017.html).
+The **CICIDS 2017** dataset includes realistic network traffic captured in a controlled environment and labeled with various attack types such as:
 
-### Step 2: Attack Data Filtering (AttackDivision.ipynb)
+- DoS
+- DDoS
+- PortScan
+- BruteForce
+- BENIGN (Normal traffic)
 
-- In this step, the program uses the "all_data.csv" file to create attack-specific files.
-- These attack files are then saved in the "./attacks/" directory for further analysis.
-- The dataset contains a total of 12 attack types, and this step separates them for individual examination.
+📁 Files are available here: [https://www.unb.ca/cic/datasets/ids-2017.html](https://www.unb.ca/cic/datasets/ids-2017.html)
 
-### Step 3: Feature Selection and Machine Learning (FeatureSelection.ipynb)
+---
 
-- This step focuses on feature selection for the attack files created in Step 2.
-- The program identifies the four features with the highest weight for each file.
-- These selected features are used as input for machine learning algorithms.
+## 🎯 Project Goals
 
-### Step 4: Machine Learning Algorithm Evaluation (MachineLearningSep.ipynb)
+- Load and preprocess raw CSV traffic data
+- Handle missing values, infinite values, and label encoding
+- Address class imbalance using **RandomUnderSampler**
+- Train and compare 4 machine learning models:
+  - Random Forest
+  - XGBoost
+  - Logistic Regression
+  - Support Vector Machine (SVM)
+- Evaluate performance using F1 Score, Accuracy, Precision, and Recall
+- Hyperparameter tuning with GridSearchCV
+- Identify the best-performing model
 
-- The final step applies seven machine learning algorithms to each attack file multiple times for robust evaluation.
-- Results of these operations are displayed on the screen and saved in the file "./attacks/results_1.csv".
-- Additionally, box and whisker graphics representing the results are generated.
-- Both the graphics and results are saved in the "./attacks/result_graph_1/" folder.
-- 
-## Dataset Source
+---
 
-You can access the CIC-IDS2017 dataset [here](https://www.unb.ca/cic/datasets/ids-2017.html).
+## 🧠 AI Models Used
 
+| Model                | Description |
+|---------------------|-------------|
+| **Random Forest**    | Ensemble of decision trees, great for tabular data |
+| **XGBoost**          | Gradient boosting technique, efficient and accurate |
+| **Logistic Regression** | Simple linear model for classification |
+| **SVM**              | Finds optimal hyperplane for classification |
+
+---
+
+## ⚙️ Setup Instructions (Google Colab Compatible)
+
+### 1. Install Required Libraries
+
+```bash
+!pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost
+```
+
+### 2. Upload and Extract Dataset
+
+- Upload your dataset to Colab or mount Google Drive
+- Unzip files to `/content/MachineLearningCSV/MachineLearningCVE/`
+
+### 3. Run the Script
+
+Paste the entire script into a Colab notebook and run sequentially.
+
+---
+
+## 🧹 Data Preprocessing Summary
+
+- Handled missing and infinite values
+- Encoded categorical labels using `LabelEncoder`
+- Scaled features using `StandardScaler`
+- Balanced the dataset using `RandomUnderSampler` (optional: SMOTE can be used)
+- Split into train/test sets using stratified sampling
+
+---
+
+## 📈 Model Evaluation Metrics
+
+- Confusion Matrix
+- Accuracy, Precision, Recall
+- Weighted F1-Score
+- Per-Class F1 Scores
+- Cross-validation with 5-fold CV
+- Feature importance plots for tree-based models
+
+---
+
+## 🏆 Final Results
+
+- ✅ **Best Model:** Random Forest / XGBoost (based on F1 Score)
+- 🎯 **F1 Score:** ~0.97 (varies by run)
+- 📊 Balanced performance across multiple attack classes
+- 🚀 Supports hyperparameter tuning for best performance
+
+---
+
+## 📌 Recommendations for Deployment
+
+1. Use real-time traffic feature extraction tools (e.g., Wireshark + parser)
+2. Continuously retrain the model with fresh labeled data
+3. Integrate the model with a SIEM or firewall for live threat blocking
+4. Use ensemble models for higher robustness
+5. Apply logging and monitoring for production use
+
+---
+
+## 📂 Folder Structure
+
+```
+project-root/
+│
+├── /notebooks              # Jupyter/Colab notebooks
+├── /data                   # CIC-IDS-2017 dataset CSV files
+├── /model_results/         # Saved plots and evaluation results
+├── README.md               # Project documentation
+└── requirements.txt        # Python dependencies (optional)
+```
+
+---
+
+## 🤝 Acknowledgements
+
+- [Canadian Institute for Cybersecurity](https://www.unb.ca/cic/)
+- [imbalanced-learn](https://imbalanced-learn.org/)
+- [XGBoost](https://xgboost.readthedocs.io/)
+- Network attack detection community for datasets and techniques
+
+---
+
+## 💡 License
+
+This project is released under the [MIT License](LICENSE).
