@@ -38,7 +38,7 @@ The "Threat Detection in Cyber Security Using AI" project aims to develop a thre
 
 - Models are compared across multiple attack types to assess generalization and robustness.
 - Visualization through box and whisker plots provides a clear picture of how each model performs across various metrics.
-- Seven ML algorithms are compared: Random Forest, Decision Tree, SVM, KNN, Logistic Regression, Naive Bayes, and Gradient Boosting.
+- Four ML algorithms are compared: Random Forest, SVM, Logistic Regression, and XgBoost.
 
 ### Step 7: Advanced Evaluation For Best Model
 
